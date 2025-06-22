@@ -1,0 +1,17 @@
+# 파이썬 3.9 기본 이미지 사용
+FROM python:3.9-slim
+
+# 작업 디렉토리 설정
+WORKDIR /app
+
+# 파일 복사
+COPY . .
+
+# 라이브러리 설치
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 5000번 포트 개방
+EXPOSE 5000
+
+# 앱 실행
+CMD ["python", "app.py"]
